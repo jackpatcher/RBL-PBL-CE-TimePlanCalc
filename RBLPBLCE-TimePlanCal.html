@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RBL-LearningTimePlan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script>
+       $(document).ready(function() {
+             $('button').on('click', function(e) {
+            //   console.log('e', e.target.innerHTML);
+
+              var min = $('#min').val();
+                var  min_int = parseFloat(min);
+              var times = $('#times').val();
+                var  times_int = parseFloat(times);
+
+
+              var onesixth  = parseFloat( times_int * min_int) * 30/180;
+              var onetwoth  = parseFloat( times_int * min_int) * 90/180;
+
+
+
+              $('#ce').val(Math.floor(onesixth))  ;
+              $('#think').val( Math.floor(onesixth))  ;
+              $('#research').val(Math.floor(onetwoth))  ;
+              $('#aar').val(Math.floor(onesixth)) ;
+
+
+            });
+         });
+
+  </script>
+
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <p>โปรแกรมคำนวณเวลา</p>
+  <h1> การจัดการเรียนการสอนแบบ RBL/PBL </h1>
+  <h3>บนฐานจิตตปัญญาศึกษา</h3>
+  <h3>RBL/PBL CE TimePlanCalc V1.0</h3>
+  <p>โดย ครูจิรัฎฐ์ พงษ์ทองเมือง </p>
+  <p> โรงเรียนเสม็ดจวนวิทยาคม สพม.12</p>
+</div>
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-sm-4">
+      <h3>กรอกข้อมูลเวลา</h3>
+      <p>การจัดการเวลา ต่อ 1ครั้ง หรือ สัปดาห์</p>
+
+            <form>
+                <div class="form-group">
+                  <label for="min">เรียนคาบละ (นาที) :</label>
+                  <input type="number" class="form-control" id="min" value="50">
+                </div>
+                <div class="form-group">
+                  <label for="times">จำนวนคาบ </label>
+                  <input type="number" class="form-control" id="times" value="2">
+                </div>
+
+
+                  <div class="form-group" >
+
+                    <button type="button" class="btn btn-success">คำนวณ </button>
+                  </div>
+           </form>
+
+    </div>
+
+
+    <div class="col-sm-4">
+      <h3>ผลการคำนวณ</h3>
+      <p>แนวทางการจัดการเวลา </p>
+
+          <form>
+              <div class="form-group">
+                <label for="ce">จิตตปัญญา : (นาที)</label>
+                <input type="text" class="form-control" id="ce" value="-" disabled>
+              </div>
+
+              <div class="form-group">
+                <label for="think">หลักคิด : (นาที) </label>
+                <input type="text" class="form-control" id="think" value="-" disabled>
+              </div>
+
+              <div class="form-group">
+                <label for="reserch">โครงงาน/วิจัย : (นาที) </label>
+                <input type="text" class="form-control" id="research" value="-" disabled>
+              </div>
+              <div class="form-group">
+                <label for="aar">สรุป ถอดบทเรียน/สะท้อนคิด : (นาที)</label>
+                <input type="text" class="form-control" id="aar" value="-" disabled>
+              </div>
+
+         </form>
+
+    </div>
+
+
+    <div class="col-sm-4">
+      <h3>อ้างอิงข้อมูล</h3>
+      <p>ข้อมูลจาก <a href="http://stdb.most.go.th/scientist_detail.aspx?id=2623" target="_blank" >รศ.ไพโรจน์ คีรีรัตน์</a></p>
+      <p>Assoc.Prof. Pairoj Kirirat</p>
+      <p>ความเชี่ยวชาญ สาขาวิศวกรรมศาสตร์	วิศวกรรมเครื่องกล </p>
+      <p>โครงการศูนย์พี่เลี้ยงเพาะพันธุ์ปัญญา ศูนย์มหาวิทยาลัยสงขลานครินทร์</p>
+      <h3>ผู้เขียนโปรแกรม</h3>
+      <p><a href="http://fb.com/gtageradt" target="_blank">จิรัฎฐ์  พงษ์ทองเมือง</a></p>
+      <p><a href="https://www.w3schools.com/bootstrap/bootstrap_examples.asp" target="_blank">Programming Document</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
